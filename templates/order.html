@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-wrap">
+    <div class="container-fluid">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Products</a></li>
+            <li class="breadcrumb-item active">Checkout</li>
+        </ul>
+    </div>
+</div>
+
+<center>
+    {% for inf in info %}
+<div class="content">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="checkout-inner">
+                    <div class="billing-address">
+                        <h2>Billing Address</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name :</label>
+                                {{inf.first_name}} {{inf.last_name}}<br>
+                                <label>E-mail :</label>
+                                {{inf.email}}<br>
+                                <label>Mobile No :</label>
+                                {{inf.phone}}<br>
+                                <label>Address :</label>
+                                {{inf.address}}<br>
+                                <label>Country :</label>
+                                {{inf.country}}<br>
+                                <label>City :</label>
+                                {{inf.city}}<br>
+                                <label>State :</label>
+                                {{inf.state}}<br>
+                                <label>ZIP Code :</label>
+                                {{inf.zip_code}}<br>
+</div>
+{% endfor %}
+</center>
+    <!-- Checkout End -->
+    {% endblock %}

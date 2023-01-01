@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-wrap">
+    <div class="container-fluid">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Products</a></li>
+            <li class="breadcrumb-item active">Checkout</li>
+        </ul>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+<!-- Checkout Start -->
+    <div class="checkout">
+        <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="checkout-inner">
+                            {% for ds in state %}
+                            <div class="billing-address">
+                                <h2>Billing Address</h2>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>First Name</label>
+                                        {{ds.First_Name}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Last Name"</label>
+                                        {{ds.last_name}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>E-mail</label>
+                                        {{ds.email}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Mobile No</label>
+                                        {{ds.phone}}
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Address</label>
+                                        {{ds.address}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Country</label>
+                                        {{ds.country}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>City</label>
+                                        {{ds.city}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>State</label>
+                                        {{ds.state}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>ZIP Code</label>
+                                        {{ds.zip_code}}
+                                    </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Checkout End -->
+    {% endblock %}

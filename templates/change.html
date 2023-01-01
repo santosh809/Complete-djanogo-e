@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<!-- Breadcrumb End -->
+
+<!-- Login Start -->
+<div class="login">
+    <div class="container-fluid">
+        {% for message in messages %}
+        <Center><front style="color: red;">{{message}}</front></Center>
+        {% endfor %}
+        <div class="row">
+            <div class="col-lg-6">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="login-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>old Password</label>
+                                <input name="old" class="form-control"
+                                    type="text" placeholder="OLd Password">
+                            </div>
+                            <div class="col-md-6">
+                                <label>New Password</label>
+                                <input name="npass" class="form-control"
+                                    type="text" placeholder="New Password">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Comfirm new Password</label>
+                                <input name="cnpass"class="form-control"
+                                    type="text" value="{{user_id}}" 
+                                    placeholder="Comfirm new Password">
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login End -->
+{% endblock %}
